@@ -1,0 +1,449 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f0f0f0;
+    background-color: black;
+}
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-icon .line {
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color:whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: goldenrod;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.logo480
+{
+    color: black;
+}
+
+.lab
+{
+    color: goldenrod;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        border-radius: 0;
+        padding: 10px 0;
+        transition: max-height 0.5s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .nav-links.active {
+        display: flex;
+        max-height: 300px; /* Adjust based on content */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-icon.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.toggle .line2 {
+        opacity: 0;
+    }
+
+    .menu-icon.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Button Container: Flexbox to align buttons horizontally with space between */
+.button-container {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;  /* Distribute buttons evenly */
+    gap: 30px;  /* Add space between the buttons */
+    width: 100%;  /* Limit the width of the button container */
+    justify-content: center;
+}
+
+/* Button Styling */
+.btn {
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: white;
+    background-color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    
+    color:goldenrod; /* Darker blue when hovered */
+}
+
+/* Responsive Design: For screens smaller than 768px (tablets) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;  /* Adjust font size for tablets */
+    }
+
+    .button-container {
+        width: 100%;  /* Adjust the width of the button container */
+    }
+}
+
+/* Responsive Design: For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px)
+{
+    .button-container {
+        width: 100%; 
+        gap: 10px;
+        padding: 3px;
+    }
+}
+
+
+@media (max-width: 325px)
+{
+    .button-container
+    {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Slider Container */
+.slider {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden; /* Hide images that are outside of the container */
+}
+
+/* Slider Image Container */
+.slider-container {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Smooth transition for sliding effect */
+}
+
+/* Individual Slides */
+.slide {
+    min-width: 100%;
+    transition: opacity 1s ease-in-out; /* Fade transition for each slide */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height:auto;
+}
+
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Navigation Buttons */
+btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Product Section */
+.products-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.products-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: whitesmoke;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Product Cards Container */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Individual Product Card */
+.product-card {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 300px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 4px 8px   rgba(255, 255, 255, 0.20);
+    
+}
+
+/* Product Image */
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Product Title */
+.product-card h3 {
+    font-size: 1.5rem;
+    color: goldenrod;
+    margin-bottom: 10px;
+}
+
+/* Product Description */
+.product-card p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Product Price */
+.product-card .price {
+    font-size: 1.2rem;
+    color: goldenrod;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.product-card .btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+}
+
+.product-card .btn:hover {
+    background-color: goldenrod;
+    color: black;
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: #000; /* Black background */
+    color: #DAA520; /* Goldenrod text color */
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.footer-column p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #DAA520;
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* Y-axis hover animation */
+}
+
+/* Media Queries for Responsive Design */
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr; /* 2 columns for tablets */
+    }
+}
+
+/* For screens smaller than 480px (Mobile Devices) */
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
